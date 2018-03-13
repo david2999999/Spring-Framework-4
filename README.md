@@ -5,4 +5,5 @@ Spring framework is an open source Java platform. It was initially written by Ro
 
 Spring is lightweight when it comes to size and transparency. The basic version of Spring framework is around 2MB.
 
-The core features of the Spring Framework can be used in developing any Java application, but there are extensions for building web applications on top of the Java EE platform. Spring framework targets to make J2EE development easier to use and promotes good programming practices by enabling a POJO-based programming model.
+The core features of the Spring Framework can be used in developing any Java application, but there are extensions for building web applications on top of the Java EE platform. Spring framework targets to make
+J2EE development easier to use and promotes good programming practices by enabling a POJO-based programming model.
