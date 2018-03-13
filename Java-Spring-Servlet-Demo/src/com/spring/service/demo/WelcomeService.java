@@ -11,7 +11,7 @@ public class WelcomeService {
 		// add data to the list
 		myWelcomeMessage.add("Hello! ");
 		myWelcomeMessage.add(name);
-		myWelcomeMessage.add(", welcome to the spring course");
+		myWelcomeMessage.add(", welcome to the spring course. Inside service layer");
 		
 		return myWelcomeMessage;
 	}
