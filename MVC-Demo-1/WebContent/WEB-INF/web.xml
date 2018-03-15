@@ -12,14 +12,17 @@
   
   <servlet>
     <description></description>
-    <display-name>Spring MVC Demo</display-name>
-    <servlet-name>springMVCDemo</servlet-name>
+    <display-name>spring-mvc-demo</display-name>
+    <servlet-name>springMVC</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
   
+  <!-- This looks for the servlet called springMVC-servlet.xml -->
   <servlet-mapping>
-    <servlet-name>springMVCDemo</servlet-name>
+    <servlet-name>springMVC</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  
+  
 </web-app>
