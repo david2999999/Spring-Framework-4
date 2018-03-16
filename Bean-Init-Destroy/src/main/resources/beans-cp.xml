@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-destroy-method="preDestroy"
+	default-init-method="postConstruct">
 
 
-	<bean id="myorg" class="com.spring.domain.Organizaton"
-		destroy-method="destroy" init-method="initialize">
+	<bean id="myorg" class="com.spring.domain.Organizaton">
 		<constructor-arg value="Amazon" index="0"></constructor-arg>
 		<constructor-arg value="1994" index="1"></constructor-arg>
 		<property name="postalCode" value="721237"></property>
 		<property name="employeeCount" value="75000"></property>
 		<property name="slogan" value="Learn Spring Everyday"></property>
-		<property name="businessService" ref="econmmerceService"></property>
+		<property name="businessService" ref="cloudService"></property>
 	</bean>
 
 	<bean id="cloudService"

@@ -20,16 +20,25 @@ public class Organizaton {
 	public Organizaton(String companyName, int yearOfincorporation) {
 		this.companyName = companyName;
 		this.yearOfIncorporation = yearOfincorporation;
-		System.out.println("Constructor called.");
+		System.out.println("Organization: Constructor called.");
 	}
 	
 	
-	public void initialize() {
-		System.out.println("Organization: initialize method called");
+//	public void initialize() {
+//		System.out.println("Organization: initialize method called");
+//	}
+//	
+//	public void destroy() {
+//		System.out.println("Organization: destroy method called");
+//	}
+	
+
+	public void postConstruct() {
+		System.out.println("organization: POSTCONTRUCT called");
 	}
 	
-	public void destroy() {
-		System.out.println("Organization: destroy method called");
+	public void preDestroy() {
+		System.out.println("organization: PREDESTROY called");
 	}
 	
 	public String corporateSlogan() {
