@@ -1,14 +1,29 @@
 package com.spring.domain.promotion;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.spring.domain.product.ConsumerProduct;
 import com.spring.domain.product.IndustrialProduct;
 
 
 public class TradeFair {
 	
+	@Autowired
 	private IndustrialProduct industrialProduct;
+	
+	@Autowired
 	private ConsumerProduct consumerProduct;
 	
+//	public TradeFair() {
+//		// TODO Auto-generated constructor stub
+//	}
+	
+//	@Autowired
+//	public TradeFair(IndustrialProduct industrialProduct, ConsumerProduct consumerProduct) {
+//		this.industrialProduct = industrialProduct;
+//		this.consumerProduct = consumerProduct;
+//	}
+
 	public int declareIndustrialProductPrice(IndustrialProduct industrialProduct) {
 		return industrialProduct.calculatePrice();
 	}
@@ -23,4 +38,17 @@ public class TradeFair {
 		
 		return priceInfo;
 	}
+
+//	@Autowired
+//	public void setIndustrialProduct(IndustrialProduct industrialProduct) {
+//		this.industrialProduct = industrialProduct;
+//	}
+//
+//	@Autowired
+//	public void setConsumerProduct(ConsumerProduct consumerProduct) {
+//		this.consumerProduct = consumerProduct;
+//	}
+	
+	
+	
 }
