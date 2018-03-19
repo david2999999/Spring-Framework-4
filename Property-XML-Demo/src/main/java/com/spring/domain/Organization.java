@@ -1,17 +1,21 @@
 package com.spring.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+
 import com.spring.service.BusinessService;
 
 public class Organization {
 
 	private String companyName;
 	private int yearOfIncorporation;
-	
-	private String postalCode;
 	private int employeeCount;
-	
 	private String slogan;
 	private BusinessService businessService;
+	
+	@Value("${org.postalCode}")
+	private String postalCode;
+	
 
 	public Organization() {
 		System.out.println("Default Constructor Called");
@@ -96,7 +100,8 @@ public class Organization {
 		return slogan;
 	}
 
-	public void setSlogan(String slogan) {
+	@Autowired
+	public void setSlogan(@Value("${org.slogan}") String slogan) {
 		this.slogan = slogan;
 		System.out.println("Set slogan called");
 	}

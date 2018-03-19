@@ -10,9 +10,9 @@
 	<bean id="myorg" class="com.spring.domain.Organization">
 		<constructor-arg value="${org.companyName}" index="0"></constructor-arg>
 		<constructor-arg value="${org.yearOfIncorporation}" index="1"></constructor-arg>
-		<property name="postalCode" value="721237"></property>
+<!-- 		<property name="postalCode" value="721237"></property>-->
 		<property name="employeeCount" value="${org.employeeCount}"></property>
-		<property name="slogan" value="Learn Spring Everyday"></property>
+		<!-- <property name="slogan" value="Learn Spring Everyday"></property> -->
 		<property name="businessService" ref="cloudService"></property>
 	</bean>
 

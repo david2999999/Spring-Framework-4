@@ -16,6 +16,8 @@ public class PropertyWithXMLApp {
 		Organization organizaton = context.getBean("myorg", Organization.class);
 		System.out.println(organizaton);
 		
+		System.out.println(organizaton.getSlogan());	
+		
 		// close the application context (container)
 		context.close();
 	}
