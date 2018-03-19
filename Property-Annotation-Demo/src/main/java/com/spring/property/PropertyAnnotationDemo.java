@@ -1,20 +1,21 @@
 package com.spring.property;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.spring.domain.promotion.TradeFair;
+import com.spring.domain.Organization;
 
 public class PropertyAnnotationDemo {
 
 	public static void main(String[] args) {
 		
 		// create the application context (container)
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans-cp.xml");
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(PropertyConfig.class);
 		
-		TradeFair tradeFair = context.getBean("myFair", TradeFair.class);
-		System.out.println(tradeFair.specialPromotionalString());
+		Organization organization = context.getBean("myorg", Organization.class);
+		System.out.println(organization);
+		System.out.println("Slogan: " + organization.corporateSlogan());
 		
-		// close the application context (container)
+		// close the context
 		context.close();
 	}
 
