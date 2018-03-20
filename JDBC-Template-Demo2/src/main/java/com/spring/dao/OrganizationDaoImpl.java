@@ -22,7 +22,7 @@ public class OrganizationDaoImpl implements OrganizationDao {
 	}
 	
 	public boolean create(Organization org) {
-		String sqlQuery = "INSERT INTO organization (company_name, year_of_incorporation, postal_code, employee_count, slogan)" + 
+		String sqlQuery = "INSERT INTO organization (company_name, year_of_incoporation , postal_code, employee_count, slogan)" + 
 						"VALUE(?,?,?,?,?)";
 		Object[] args = new Object[] {org.getCompanyName(), org.getYearOfIncoporation(), org.getPostalCode(),
 										org.getEmployeeCount(), org.getSlogan()};

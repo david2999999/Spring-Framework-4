@@ -36,6 +36,7 @@ public class DaoUtils {
 		Organization org3 = new Organization("Facebook", 1934, "12312", 5221, "Hello, fb here");
 		
 		List<Organization> organizations = new ArrayList<Organization>();
+		organizations.add(org1); organizations.add(org2); organizations.add(org3);
 		int createCount = 0;
 		for(Organization organization: organizations) {
 			boolean isCreated = dao.create(organization);

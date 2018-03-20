@@ -18,11 +18,23 @@ public class JdbcTemplateApp2 {
 		
 		// create the bean
 		OrganizationDao dao = context.getBean("orgDao", OrganizationDaoImpl.class);
-		List<Organization> orgs = dao.getAllOrganization();
+
+		// creating seed data
+		DaoUtils.createSeedData(dao);
 		
-		for(Organization organization : orgs) {
-			System.out.println(organization);
-		}
+		// List Organizations
+		List<Organization> organizations = dao.getAllOrganization();
+		DaoUtils.printOrganizations(organizations, DaoUtils.readOperation);
+		
+		// create a new organization record
+		Organization organization = new Organization("General Electric", 1923, "9219", 5776, "Imagination at work");
+		boolean isCreated = dao.create(organization);
+		DaoUtils.printSuccessFailure(DaoUtils.createOperation, isCreated);
+		DaoUtils.printOrganizations(dao.getAllOrganization(), DaoUtils.readOperation);
+		
+		// clean up
+		dao.cleanup();
+		DaoUtils.printOrganizationCount(dao.getAllOrganization(), DaoUtils.cleanUpOperation);
 		
 		// close the application context
 		((ClassPathXmlApplicationContext)context).close();
