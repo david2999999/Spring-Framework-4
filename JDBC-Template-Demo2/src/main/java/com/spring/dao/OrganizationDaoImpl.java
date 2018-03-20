@@ -22,8 +22,12 @@ public class OrganizationDaoImpl implements OrganizationDao {
 	}
 	
 	public boolean create(Organization org) {
-		// TODO Auto-generated method stub
-		return false;
+		String sqlQuery = "INSERT INTO organization (company_name, year_of_incorporation, postal_code, employee_count, slogan)" + 
+						"VALUE(?,?,?,?,?)";
+		Object[] args = new Object[] {org.getCompanyName(), org.getYearOfIncoporation(), org.getPostalCode(),
+										org.getEmployeeCount(), org.getSlogan()};
+		
+		return jdbcTemplate.update(sqlQuery, args) == 1;
 	}
 
 	public Organization getOrganization(Integer id) {
@@ -49,7 +53,8 @@ public class OrganizationDaoImpl implements OrganizationDao {
 	}
 
 	public void cleanup() {
-		// TODO Auto-generated method stub
+		String sqlQuery = "TRUNCATE TABLE organization";
+		jdbcTemplate.execute(sqlQuery);
 
 	}
 
