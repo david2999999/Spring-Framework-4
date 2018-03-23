@@ -48,8 +48,10 @@ public class OrganizationDaoImpl implements OrganizationDao {
 	}
 
 	public boolean delete(Organization org) {
-		// TODO Auto-generated method stub
-		return false;
+		String sqlQuery = "DELETE from organization where id = ?";
+		Object[] args = new Object[] {org.getId()};
+		
+		return jdbcTemplate.update(sqlQuery, args) == 1;
 	}
 
 	public boolean update(Organization org) {

@@ -43,6 +43,11 @@ public class JdbcTemplateApp2 {
 		DaoUtils.printSuccessFailure(DaoUtils.updateOperation, isUpdated);
 		DaoUtils.printOrganization(dao.getOrganization(2), DaoUtils.updateOperation);
 		
+		// delete an organization
+		boolean isDeleted = dao.delete(dao.getOrganization(3));
+		DaoUtils.printSuccessFailure(DaoUtils.deleteOperation, isDeleted);
+		DaoUtils.printOrganizations(dao.getAllOrganization(), DaoUtils.deleteOperation);
+		
 		// clean up
 		dao.cleanup();
 		DaoUtils.printOrganizationCount(dao.getAllOrganization(), DaoUtils.cleanUpOperation);
