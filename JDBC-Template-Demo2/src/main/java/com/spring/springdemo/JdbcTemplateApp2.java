@@ -32,6 +32,10 @@ public class JdbcTemplateApp2 {
 		DaoUtils.printSuccessFailure(DaoUtils.createOperation, isCreated);
 		DaoUtils.printOrganizations(dao.getAllOrganization(), DaoUtils.readOperation);
 		
+		// get a single organizatin
+		Organization organization2 = dao.getOrganization(1);
+		DaoUtils.printOrganization(organization2, "getOrganization");
+		
 		// clean up
 		dao.cleanup();
 		DaoUtils.printOrganizationCount(dao.getAllOrganization(), DaoUtils.cleanUpOperation);

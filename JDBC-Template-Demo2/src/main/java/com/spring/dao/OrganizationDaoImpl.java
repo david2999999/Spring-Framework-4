@@ -31,8 +31,13 @@ public class OrganizationDaoImpl implements OrganizationDao {
 	}
 
 	public Organization getOrganization(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		String sqlQuery = "SELECT id, company_name, year_of_incoporation , postal_code, employee_count, slogan " + 
+							" FROM organization WHERE id = ?";
+		Object[] args = new Object[] {id};
+		
+		Organization organization = jdbcTemplate.queryForObject(sqlQuery, args, new OrganizationRowMapper());
+		
+		return organization;
 	}
 
 	public List<Organization> getAllOrganization() {
