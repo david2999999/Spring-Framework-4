@@ -2,55 +2,66 @@ package com.spring.springdemo;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 import com.spring.dao.OrganizationDao;
 import com.spring.dao.OrganizationDaoImpl;
 import com.spring.domain.Organization;
 
+
+@Component
 public class NamedJDBCTemplateApp {
+	
+	@Autowired
+	private OrganizationDao dao;
+	
+	@Autowired
+	private DaoUtils daoUtils;
 
-	public static void main(String[] args) {
-		
-		// create the application context
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans-cp.xml");
-		
-		// create the bean
-		OrganizationDao dao = context.getBean("orgDao", OrganizationDaoImpl.class);
-
+	public void actionMethod() {
 		// creating seed data
-		DaoUtils.createSeedData(dao);
+		daoUtils.createSeedData(dao);
 		
 		// List Organizations
 		List<Organization> organizations = dao.getAllOrganization();
-		DaoUtils.printOrganizations(organizations, DaoUtils.readOperation);
+		daoUtils.printOrganizations(organizations, daoUtils.readOperation);
 		
 		// create a new organization record
 		Organization organization = new Organization("General Electric", 1923, "9219", 5776, "Imagination at work");
 		boolean isCreated = dao.create(organization);
-		DaoUtils.printSuccessFailure(DaoUtils.createOperation, isCreated);
-		DaoUtils.printOrganizations(dao.getAllOrganization(), DaoUtils.readOperation);
+		daoUtils.printSuccessFailure(daoUtils.createOperation, isCreated);
+		daoUtils.printOrganizations(dao.getAllOrganization(), daoUtils.readOperation);
 		
 		// get a single organizatin
 		Organization organization2 = dao.getOrganization(1);
-		DaoUtils.printOrganization(organization2, "getOrganization");
+		daoUtils.printOrganization(organization2, "getOrganization");
 		
 		// updating slogan for an organization
 		Organization organization3 = dao.getOrganization(2);
 		organization3.setSlogan("We Build AWESOME driving machines");
 		boolean isUpdated = dao.update(organization3);
-		DaoUtils.printSuccessFailure(DaoUtils.updateOperation, isUpdated);
-		DaoUtils.printOrganization(dao.getOrganization(2), DaoUtils.updateOperation);
+		daoUtils.printSuccessFailure(daoUtils.updateOperation, isUpdated);
+		daoUtils.printOrganization(dao.getOrganization(2), daoUtils.updateOperation);
 		
 		// delete an organization
 		boolean isDeleted = dao.delete(dao.getOrganization(3));
-		DaoUtils.printSuccessFailure(DaoUtils.deleteOperation, isDeleted);
-		DaoUtils.printOrganizations(dao.getAllOrganization(), DaoUtils.deleteOperation);
+		daoUtils.printSuccessFailure(daoUtils.deleteOperation, isDeleted);
+		daoUtils.printOrganizations(dao.getAllOrganization(), daoUtils.deleteOperation);
 		
 		// clean up
 		dao.cleanup();
-		DaoUtils.printOrganizationCount(dao.getAllOrganization(), DaoUtils.cleanUpOperation);
+		daoUtils.printOrganizationCount(dao.getAllOrganization(), daoUtils.cleanUpOperation);
+	}
+	
+	public static void main(String[] args) {
+		// create the application context
+		ApplicationContext context = new ClassPathXmlApplicationContext("beans-cp.xml");
+		NamedJDBCTemplateApp mainApp = context.getBean(NamedJDBCTemplateApp.class);
+		
+		mainApp.actionMethod();
 		
 		// close the application context
 		((ClassPathXmlApplicationContext)context).close();

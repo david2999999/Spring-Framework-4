@@ -3,9 +3,13 @@ package com.spring.springdemo;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import com.spring.dao.OrganizationDao;
 import com.spring.domain.Organization;
 
+@Service
 public class DaoUtils {
 
 	public final String createOperation = "CREATE";
