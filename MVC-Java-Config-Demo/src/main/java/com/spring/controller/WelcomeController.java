@@ -16,7 +16,7 @@ public class WelcomeController {
 	@Autowired
 	private GenericWelcomeService welcomeService;
 	
-	@RequestMapping("/")
+	@RequestMapping
 	public String doWelcome(Model model) {
 		
 		// retrieving the processed data
