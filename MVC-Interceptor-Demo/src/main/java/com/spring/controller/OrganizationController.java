@@ -21,7 +21,7 @@ public class OrganizationController {
 		List<Organization> organizations = organizationService.getOrgList();
 		model.addAttribute("orgList", organizations);
 		
-		return "listOrganization2";
+		return "listOrganizations";
 	}
 	
 	@RequestMapping("/location")

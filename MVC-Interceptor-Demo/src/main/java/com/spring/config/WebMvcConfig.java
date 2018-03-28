@@ -34,19 +34,19 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	}
 
 
-	@Bean
-	public RequestMappingHandlerMapping requestMappingHandlerMapping() {
-		RequestMappingHandlerMapping requestMappingHandlerMapping = new RequestMappingHandlerMapping();
-		//Whether to use suffix pattern match (".*") when matching patterns to requests. 
-		// If enabled a method mapped to "/users" also matches to "/users.*".
-		requestMappingHandlerMapping.setUseSuffixPatternMatch(true);
-		
-		//Whether to match to URLs irrespective of the presence of a trailing slash. 
-		//If enabled a method mapped to "/users" also matches to "/users/".
-		requestMappingHandlerMapping.setUseTrailingSlashMatch(true);
-		
-		return requestMappingHandlerMapping;
-	}
+//	@Bean
+//	public RequestMappingHandlerMapping requestMappingHandlerMapping() {
+//		RequestMappingHandlerMapping requestMappingHandlerMapping = new RequestMappingHandlerMapping();
+//		//Whether to use suffix pattern match (".*") when matching patterns to requests. 
+//		// If enabled a method mapped to "/users" also matches to "/users.*".
+//		requestMappingHandlerMapping.setUseSuffixPatternMatch(true);
+//		
+//		//Whether to match to URLs irrespective of the presence of a trailing slash. 
+//		//If enabled a method mapped to "/users" also matches to "/users/".
+//		requestMappingHandlerMapping.setUseTrailingSlashMatch(true);
+//		
+//		return requestMappingHandlerMapping;
+//	}
 	
 	@Bean
 	public UrlBasedViewResolver urlBasedViewResolver() {
