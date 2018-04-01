@@ -28,4 +28,15 @@ public class ModelAttributeDemoController {
 											+ "on methods and on method arguments");
 	}
 	
+	// Test 2: demonstrating the usage of the 'name' attribute (on method)
+	// this will work the same as
+	// model.addAttribute("testdata2", "We will conduct a series of test here")
+	@ModelAttribute(name="testdata2")
+	public String modelAttributeTest2() {
+		logger.info("INSIDE modelAttribute 2");
+		return "We will conduct a series of test here";
+	}
+	
+	
+	
 }
