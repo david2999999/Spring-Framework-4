@@ -36,14 +36,45 @@ public class RequestMappingAndParamDemoController {
 		return "requestMappingAndParamResults";
 	}
 	
-	// test 2: Testing @RequestMapping fal back feature
+	// test 3: Testing @RequestMapping fal back feature
 	@RequestMapping(value="*", method=RequestMethod.GET)
 	//@RequestMapping(value="*", method= {RequestMethod.GET, RequestMethod.POST})
 	public String requestMappingAndParamTest3() {
 		return "fallback";
 	}
 	
+	// test 4: Testing @RequestParam 'defaultValue' attribute
+	@RequestMapping(value="/test4")
+	//@RequestMapping(value="*", method= {RequestMethod.GET, RequestMethod.POST})
+	public String requestMappingAndParamTest4(
+			@RequestParam(value = "orgName", defaultValue="Anonymous Organization") String orgName, Model model) {
+		model.addAttribute("orgname", orgName);
+		model.addAttribute("testserial", "test4");
+		return "requestMappingAndParamResults";
+	}
 	
-	
+	// test 5: Testing @RequestParam without 'name' or 'value' attribute
+	@RequestMapping(value="/test5", method=RequestMethod.GET)
+	public String requestMappingAndParamTest5(@RequestParam String orgName, Model model) {
+		model.addAttribute("orgname", orgName);
+		model.addAttribute("testserial", "test5");
+		return "requestMappingAndParamResults";
+	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
