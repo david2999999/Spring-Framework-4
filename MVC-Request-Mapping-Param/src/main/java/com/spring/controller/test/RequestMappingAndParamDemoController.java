@@ -1,5 +1,7 @@
 package com.spring.controller.test;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class RequestMappingAndParamDemoController {
 
-	//private static Logger logger = LoggerFactory.getLogger(RequestMappingAndParamDemoController.class);
+	private static Logger logger = LoggerFactory.getLogger(RequestMappingAndParamDemoController.class);
 
 	@RequestMapping(value = "/home")
 	public String home() {
@@ -68,6 +70,14 @@ public class RequestMappingAndParamDemoController {
 //		return "requestMappingAndParamResults2";
 //	}
 	
+//	// test 6: Subest2 - Testing @RequestMapping
+//	@RequestMapping(value = "/test6")
+//	public String requestMappingAndParamTest6SubTest2(@RequestParam String empcount, Model model) {
+//		model.addAttribute("orgname", empcount);
+//		model.addAttribute("testserial", "test6-subtest2");
+//		return "requestMappingAndParamResults2";
+//	}
+	
 	// test 6: Subtest1 : Testing removal of @requestMapping ambiguity with the same base URI but
 	// with a different parameter
 	@RequestMapping(value = "/test6", params="orgName")
@@ -86,11 +96,50 @@ public class RequestMappingAndParamDemoController {
 		return "requestMappingAndParamResults2";
 	}
 	
-//	// test 6: Subest2 - Testing @RequestMapping
-//	@RequestMapping(value = "/test6")
-//	public String requestMappingAndParamTest6SubTest2(@RequestParam String empcount, Model model) {
-//		model.addAttribute("orgname", empcount);
-//		model.addAttribute("testserial", "test6-subtest2");
-//		return "requestMappingAndParamResults2";
-//	}
+	// test 6: Subest3 : Testing Removal of @RequestMapping with multiple request params
+	@RequestMapping(value = "/test6/subtest3", 
+					method = RequestMethod.GET, 
+					params= {"orgname","empcount"})
+	public String requestMappingAndParamTest6SubTest3(
+			@RequestParam String orgname, 
+			@RequestParam String empcount, 
+			Model model) {
+		model.addAttribute("orgname", orgname);
+		model.addAttribute("empcount", empcount);
+		model.addAttribute("testserial", "test6-subtest3");
+		return "requestMappingAndParamResults2";
+	}
+	
+	// test 6: Subest3 : Testing Removal of @RequestMapping with multiple request params
+	@RequestMapping(value = "/test6/subtest4", 
+					method = RequestMethod.GET, 
+					params= {"orgname","empcount"})
+	public String requestMappingAndParamTest6SubTest4(
+			@RequestParam String orgname, 
+			Model model) {
+		model.addAttribute("orgname", orgname);
+		model.addAttribute("testserial", "test6-subtest4");
+		return "requestMappingAndParamResults2";
+	}
+	
+	// test 7 and 8: Testing @RequestParam with multiple request URI's
+	@RequestMapping(value = {"/test7","/test8"}, 
+					method = RequestMethod.GET)
+	public String requestMappingAndParamTest7and8(
+			@RequestParam String orgname, 
+			Model model,
+			HttpServletRequest request) {
+		
+		model.addAttribute("orgname", orgname);
+		logger.info(request.getRequestURL().toString());
+		
+		if (request.getRequestURL().toString().contains("test7")) {
+			model.addAttribute("testserial", "test7");
+		}else {
+			model.addAttribute("testserial", "test8");
+		}
+		
+		return "requestMappingAndParamResults2";
+	}
+
 }
