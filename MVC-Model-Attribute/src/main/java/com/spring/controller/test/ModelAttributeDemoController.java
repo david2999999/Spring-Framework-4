@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.spring.domain.Address;
+
 @Controller
 public class ModelAttributeDemoController {
 	private static Logger logger = LoggerFactory.getLogger(ModelAttributeDemoController.class);
@@ -38,5 +40,32 @@ public class ModelAttributeDemoController {
 	}
 	
 	
+	// Test 3: Demonstrating the usage of @ModelAttribute annotation (on a method) to 
+	// implicitly add an attribute by returning it and also demonstrating the usage of 
+	// 'value' attribute of @ModelAttribute annotation (on a method)
+	@ModelAttribute(value = "testdata3")
+	public Address modelAttribute() {
+		logger.info("INSIDE modelAttributeTest3");
+		return new Address("Adelaide", "5000");
+	}
+	
+	// Test 4: Demonstrating the default naming strategy of the @ModelAttribute annotation (on a method)
+	@ModelAttribute
+	public Address modelAttributeTest4() {
+		logger.info("INSIDE modelAttributeTest4");
+		return new Address("Sydney", "2000");
+	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+

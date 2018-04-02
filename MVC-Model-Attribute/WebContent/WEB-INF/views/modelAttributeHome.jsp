@@ -37,6 +37,16 @@
 			<h2>${testdata2}</h2><hr/>
 	</div>
 	
+	<br/>
+	
+	<div align="center">
+		<!-- This is Test 3 -->
+		<h2>Corporate Office: ${testdata3.city} ${testdata3.zipCode}</h2>
+		
+		<!-- This is Test 4 -->
+		<h2>Registered Office: ${address.city} ${address.zipCode}</h2>
+	</div>
+	
 </body>
 </html>
 
