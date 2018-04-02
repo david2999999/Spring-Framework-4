@@ -4,7 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -94,6 +96,15 @@ public class ModelAttributeDemoController {
 		return new Address("Sydney", "2000");
 	}
 	
+	
+	// Test 5:  Testing the @ModelAttribute with 'value' attribute and default binding
+	@PostMapping(value="/test5")
+	public String modelAttributeTest5(@ModelAttribute(value="anAddress") Address anAddress, ModelMap model) {
+		model.addAttribute("testdata5A", anAddress.getCity());
+		model.addAttribute("testdata5B", anAddress.getZipCode());
+		
+		return "modelAttributeTest";
+	}
 }
 
 

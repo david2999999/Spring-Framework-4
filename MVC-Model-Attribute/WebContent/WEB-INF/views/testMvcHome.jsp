@@ -22,7 +22,7 @@
 			Click here to go to the test bed for @ModelAttribute and @RequestParam annotation
 		</a><br>
 		
-		<a href="${contextPath}/home2" style="font-size: 20px"> 
+		<a href="${contextPath}/home5" style="font-size: 20px"> 
 			Click here for 2nd home testbed for @ModelAttribute annotation
 		</a>
 		

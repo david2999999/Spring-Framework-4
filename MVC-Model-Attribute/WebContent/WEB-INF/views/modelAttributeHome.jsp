@@ -47,7 +47,7 @@
 		<h2>Registered Office: ${address.city} ${address.zipCode}</h2>
 		<hr/>
 		
-		<form:form action="modelAttributeTest5">
+		<form:form action="test5" modelAttribute="anAddress">
 			<h3>Test 5: Testing @ModelAttribute notation with 'value' attribute and default binding</h3>
 			<table>
 				<tr>
