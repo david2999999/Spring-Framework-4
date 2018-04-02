@@ -25,7 +25,8 @@ public class ModelAttributeDemoController {
 	public ModelAndView home2() {
 		ModelAndView modelAndView  = new ModelAndView();
 		modelAndView.setViewName("modelAttributeHome");
-		modelAndView.addObject("anAddress", new Address());
+		// the "command" will be the object that binds an object to the form
+		modelAndView.addObject("command", new Address());
 		
 		return modelAndView;
 	}

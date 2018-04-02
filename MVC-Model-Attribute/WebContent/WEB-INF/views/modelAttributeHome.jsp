@@ -45,6 +45,25 @@
 		
 		<!-- This is Test 4 -->
 		<h2>Registered Office: ${address.city} ${address.zipCode}</h2>
+		<hr/>
+		
+		<form:form action="modelAttributeTest5">
+			<h3>Test 5: Testing @ModelAttribute notation with 'value' attribute and default binding</h3>
+			<table>
+				<tr>
+					<td><form:label path="city">City Name</form:label></td>
+					<td><form:input path="city"></form:input></td>
+				</tr>
+				<tr>
+					<td><form:label path="zipCode">Postal Code</form:label></td>
+					<td><form:input path="zipCode"></form:input></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input  type="submit" value="Display Address"/></td>
+				</tr>
+			</table>
+		</form:form>
 	</div>
 	
 </body>
