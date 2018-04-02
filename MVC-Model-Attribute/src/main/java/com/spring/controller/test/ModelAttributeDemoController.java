@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.domain.Address;
 
@@ -16,6 +17,41 @@ public class ModelAttributeDemoController {
 	@RequestMapping(value="/home")
 	public String home() {
 		logger.info("INSIDE home: " + System.currentTimeMillis());
+		return "modelAttributeHome";
+	}
+	
+	// version 2 of the home method
+	@RequestMapping(value="/home2")
+	public ModelAndView home2() {
+		ModelAndView modelAndView  = new ModelAndView();
+		modelAndView.setViewName("modelAttributeHome");
+		modelAndView.addObject("anAddress", new Address());
+		
+		return modelAndView;
+	}
+	
+	// version 3 of the home method
+	@RequestMapping(value="/home3")
+	public ModelAndView home3() {
+		//dont need to create this line modelAndView.setViewName("modelAttributeHome");
+		ModelAndView modelAndView  = new ModelAndView("modelAttributeHome");
+		modelAndView.addObject("anAddress", new Address());
+		
+		return modelAndView;
+	}
+	
+	
+	// version 4 of the home method. The most succinct way
+	@RequestMapping(value="/home4")
+	public ModelAndView home4() {
+		return new ModelAndView("modelAttributeHome", "anAddress", new Address("Melbourne", "3000"));
+	}
+	
+	// version 5 of the home method. 
+	@RequestMapping(value="/home5")
+	public String home5(Model model) {
+		model.addAttribute("anAddress", new Address("Brisbane", "4000"));
+		
 		return "modelAttributeHome";
 	}
 	
@@ -50,6 +86,7 @@ public class ModelAttributeDemoController {
 	}
 	
 	// Test 4: Demonstrating the default naming strategy of the @ModelAttribute annotation (on a method)
+	// To access this object in the JSP. Use the lower case version of Address (address)
 	@ModelAttribute
 	public Address modelAttributeTest4() {
 		logger.info("INSIDE modelAttributeTest4");

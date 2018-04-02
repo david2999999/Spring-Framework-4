@@ -20,6 +20,8 @@
 		<a href="${contextPath}/home" style="font-size: 20px">
 			Click here to go to the test bed for @ModelAttribute
 		</a><br>
+		<a href="${contextPath}/home2" style="font-size: 20px"> Click here for 2nd home test bed</a>
+		
 	</div>
 </body>
 </html>
