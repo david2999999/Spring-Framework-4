@@ -33,7 +33,9 @@ public class SessionRequestAttributeController {
 	private static Logger logger = LoggerFactory.getLogger(SessionRequestAttributeController.class);
 	
 	public ModelAndView home() {
-		return new ModelAndView("sessionRequestAttributeHome", "visitorStats", new VisitorData());
+		return new ModelAndView(
+				"test/sessionRequestAttributeViews/sessionRequestAttributeHome", 
+				"visitorStats", new VisitorData());
 	}
 	
 	@ModelAttribute("visitordata")
@@ -71,7 +73,7 @@ public class SessionRequestAttributeController {
 			logger.info("This is a GET Request");
 		}
 		
-		return "sessionRequestAttributeResult";
+		return "test/sessionRequestAttributeViews/sessionRequestAttributeHome";
 	}
 	
 	
