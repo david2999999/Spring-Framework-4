@@ -18,6 +18,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import com.spring.interceptor.ExecutionTimerInterceptor;
 import com.spring.interceptor.HeaderInterceptor;
+import com.spring.interceptor.VisitorInterceptor;
 
 @Configuration
 @ComponentScan("com.spring")
@@ -30,6 +31,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	@Autowired
 	private ExecutionTimerInterceptor executionTimerInterceptor;
 	
+	@Autowired
+	private VisitorInterceptor visitorInterceptor;
 	
 
 	@Bean
@@ -65,6 +68,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(headerInterceptor);
 		registry.addInterceptor(executionTimerInterceptor).addPathPatterns("/location");
+		registry.addInterceptor(visitorInterceptor);
 	}
 
 

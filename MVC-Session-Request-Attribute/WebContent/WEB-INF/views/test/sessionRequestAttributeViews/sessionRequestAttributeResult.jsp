@@ -12,6 +12,8 @@
 <body>
 	<div align="center">
 		<h1>@SessionAttribute Test Results</h1><hr/>
+		<h3>${timeHeading}, ${durationHeading}</h3>
+		
 		<h3>
 			No of page visits in this session:
 			<c:out value="${visitorcount.count}"/>
