@@ -32,10 +32,11 @@ public class SessionRequestAttributeController {
 	
 	private static Logger logger = LoggerFactory.getLogger(SessionRequestAttributeController.class);
 	
+	@RequestMapping("/home")
 	public ModelAndView home() {
 		return new ModelAndView(
 				"test/sessionRequestAttributeViews/sessionRequestAttributeHome", 
-				"visitorStats", new VisitorData());
+				"visitorstats", new VisitorData());
 	}
 	
 	@ModelAttribute("visitordata")
@@ -51,7 +52,7 @@ public class SessionRequestAttributeController {
 	}
 	
 	@RequestMapping(value="/visitor", method=RequestMethod.POST)
-	public String getVisitors(@ModelAttribute("visitor") VisitorData currentVisitor,
+	public String getVisitors(@ModelAttribute("visitorstats") VisitorData currentVisitor,
 								HttpSession session,
 								SessionStatus sessionStatus,
 								HttpServletRequest request) {
@@ -73,7 +74,7 @@ public class SessionRequestAttributeController {
 			logger.info("This is a GET Request");
 		}
 		
-		return "test/sessionRequestAttributeViews/sessionRequestAttributeHome";
+		return "test/sessionRequestAttributeViews/sessionRequestAttributeResult";
 	}
 	
 	
