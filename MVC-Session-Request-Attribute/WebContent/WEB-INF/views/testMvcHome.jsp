@@ -24,8 +24,11 @@
 		
 		<a href="${contextPath}/home5" style="font-size: 20px"> 
 			Click here for 2nd home testbed for @ModelAttribute annotation
-		</a>
+		</a><br>
 		
+		<a href="${contextPath}/visitorRegister/home" style="font-size: 20px"> 
+			Click here to go to test bed for @SessionAttribute Annotation
+		</a>
 	</div>
 </body>
 </html>
