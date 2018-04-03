@@ -64,6 +64,15 @@
 				</tr>
 			</table>
 		</form:form>
+		<br><br>
+		<form:form action="modelAttributeTest">
+			<h3>Test 6: Testing @ModelAttribute with no explicit logical view name</h3>
+			<table>
+				<tr>
+					<td><input type="submit" value="Relocate"/></td>
+				</tr>
+			</table>
+		</form:form>
 	</div>
 	
 </body>

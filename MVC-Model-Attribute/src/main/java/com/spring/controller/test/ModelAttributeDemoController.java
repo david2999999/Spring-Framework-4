@@ -105,6 +105,17 @@ public class ModelAttributeDemoController {
 		
 		return "modelAttributeTest";
 	}
+	
+	// Test 6: Test to determine nature of how the @ModelAttribute(on method) and @RequestMapping
+	// work with no explicit logical view name
+	// since view name is not provided. the jsp page that will be loaded is modelAttributeTest.jsp
+	@RequestMapping(value="/modelAttributeTest")
+	@ModelAttribute("testdata6")
+	public Address modelAttributeTest6() {
+		return new Address("Canberra", "2600");
+	}
+	
+	
 }
 
 
