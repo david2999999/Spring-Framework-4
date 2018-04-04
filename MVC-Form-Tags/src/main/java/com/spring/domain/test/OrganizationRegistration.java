@@ -2,14 +2,35 @@ package com.spring.domain.test;
 
 public class OrganizationRegistration {
 
+	// This field is used for input field
 	private String orgName;
+	
+	// These fields are used for select field
 	private String country;
 	private String turnover;
 	private String type;
 	private String serviceLength;
 	
+	// These fields are used for checkbox field
+	private boolean registeredPreviously = true;
+	private String like;
 	
-	
+	public String getLike() {
+		return like;
+	}
+
+	public void setLike(String like) {
+		this.like = like;
+	}
+
+	public boolean isRegisteredPreviously() {
+		return registeredPreviously;
+	}
+
+	public void setRegisteredPreviously(boolean registeredPreviously) {
+		this.registeredPreviously = registeredPreviously;
+	}
+
 	public String getServiceLength() {
 		return serviceLength;
 	}
