@@ -46,4 +46,26 @@ public class OrganizationRegistrationService {
 		return registeredPreviously;
 	}
 	
+	public Map<String, String> populateOptionalServices(){
+		Map<String, String> optionalServices = new LinkedHashMap<String, String>();
+		optionalServices.put("emailService", "Mailing List");
+		optionalServices.put("promotionalService", "Promotional Emails");
+		optionalServices.put("newsLetterService", "Weekly News Service");
+		
+		return optionalServices;
+	}
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+

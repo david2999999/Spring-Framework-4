@@ -48,6 +48,19 @@
 				</c:if>
 			</c:forEach>
 		</h3>
+		
+		<h3>Optional Services Signed Up for: 
+			<c:forEach var="entry1" items="${subscriptionList}">
+				<c:forEach var="entry2" items="${orgreg.optionalServices}">
+					<c:if test="${entry2 eq entry1.key}">
+						<c:set var="optService" scope="request" value="${optService}${entry1.value}, "/>
+					</c:if>
+				</c:forEach>
+			</c:forEach>
+			<b>${optService.subString(0, optService.length() - 2)}</b>
+		</h3>
+		
+		
 		<h3>Like Our Website:
 			<c:choose>
 				<c:when test="${orgreg.like eq 'yes'}">
