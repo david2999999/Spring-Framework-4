@@ -17,4 +17,15 @@ public class OrganizationRegistrationService {
 		
 		return turnover;
 	}
+	
+	public Map<String, String> populateType(){
+		Map<String, String> types = new LinkedHashMap<String, String>();
+		types.put("none", "---Select---");
+		types.put("gov", "Government");
+		types.put("semigov", "Semi Government");
+		types.put("private", "Private");
+		
+		return types;
+
+	}
 }

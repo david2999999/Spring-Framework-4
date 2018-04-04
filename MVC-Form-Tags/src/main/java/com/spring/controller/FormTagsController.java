@@ -20,6 +20,7 @@ public class FormTagsController {
 	@Autowired
 	private OrganizationRegistrationService organizationRegistrationService;
 	
+	
 	@RequestMapping("/home")
 	public ModelAndView home(Model model) {
 		return new ModelAndView("test/formTagsTestViews/formTagsHome", 
@@ -38,6 +39,7 @@ public class FormTagsController {
 	public void populateFormObjectWithData(Model model) {
 		Map<String, Object> map = model.asMap();
 		map.put("turnoverlist", organizationRegistrationService.populateTurnover());
+		map.put("typelist", organizationRegistrationService.populateType());
 	}
 	
 }
