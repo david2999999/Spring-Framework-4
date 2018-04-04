@@ -29,6 +29,11 @@
 		<a href="${contextPath}/visitorRegister/home" style="font-size: 20px"> 
 			Click here to go to test bed for @SessionAttribute Annotation
 		</a>
+		
+		<br/>
+		<a href="${contextPath}/formTagsDemo/home" style="font-size: 20px"> 
+			Click here to go to test bed for MVC Form Tags
+		</a>
 	</div>
 </body>
 </html>

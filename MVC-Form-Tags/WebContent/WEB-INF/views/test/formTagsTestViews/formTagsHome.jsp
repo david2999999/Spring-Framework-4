@@ -19,6 +19,26 @@
 					<td><form:label path="orgName">Name of Organization</form:label></td>
 					<td><form:input path="orgName" placeholder="Enter Organization Name"/></td>
 				</tr>
+				
+				<tr>
+					<td><form:label path="country">Country</form:label></td>
+					<td>
+						<form:select path="country">
+							<form:option value="NONE">---SELECT---</form:option>
+							<form:option value="Australia">Australia</form:option>
+							<form:option value="India">India</form:option>
+							<form:option value="Sweden">Sweden</form:option>
+							<form:option value="NUnited StatesONE">United States</form:option>
+							<form:option value="Egypt">Egypt</form:option>
+						</form:select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td><form:label path="turnover">Turnover</form:label></td>
+					<td><form:select path="turnover" items="${turnoverlist}"/></td>
+				</tr>
+				
 				<tr>
 					<td align="center"><input type="submit" value="Submit"/></td>
 				</tr>
