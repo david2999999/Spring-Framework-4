@@ -48,7 +48,10 @@
 						</form:select>
 					</td>
 				</tr>
-				
+				<tr>
+					<td><form:label path="serviceLength">Service Length</form:label></td>
+					<td><form:select path="serviceLength" items="${serviceLengthList}"/></td>
+				</tr>
 				<tr>
 					<td align="center"><input type="submit" value="Submit"/></td>
 				</tr>

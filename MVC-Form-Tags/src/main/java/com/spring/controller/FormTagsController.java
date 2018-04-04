@@ -40,6 +40,7 @@ public class FormTagsController {
 		Map<String, Object> map = model.asMap();
 		map.put("turnoverlist", organizationRegistrationService.populateTurnover());
 		map.put("typelist", organizationRegistrationService.populateType());
+		map.put("serviceLengthList", organizationRegistrationService.populateServiceLengths());
 	}
 	
 }

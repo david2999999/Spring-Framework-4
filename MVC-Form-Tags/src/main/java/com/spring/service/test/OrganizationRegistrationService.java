@@ -2,12 +2,17 @@ package com.spring.service.test;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class OrganizationRegistrationService {
 
+	@Value("#{serviceLengthOptions}")
+	private Map<String, String> serviceLengthList;
+	
 	public Map<String, String> populateTurnover(){
 		Map<String, String> turnover = new LinkedHashMap<String, String>();
 		turnover.put("none", "---Select---");
@@ -26,6 +31,10 @@ public class OrganizationRegistrationService {
 		types.put("private", "Private");
 		
 		return types;
-
 	}
+	
+	public Map<String, String> populateServiceLengths(){
+		return new TreeMap<String, String>(serviceLengthList);
+	}
+	
 }

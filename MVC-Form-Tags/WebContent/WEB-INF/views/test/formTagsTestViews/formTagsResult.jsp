@@ -32,6 +32,14 @@
 				</c:if>
 			</c:forEach>
 		</h3>
+		
+		<h3>Service Length: 
+			<c:forEach var="entry" items="${serviceLengthList}">
+				<c:if test="${orgreg.serviceLength eq entry.key}">
+					<b>${entry.value}</b>
+				</c:if>
+			</c:forEach>
+		</h3>
 	</div>
 </body>
 </html>
