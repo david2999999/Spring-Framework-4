@@ -17,6 +17,10 @@ public class OrganizationRegistration {
 	private String[] optionalServices;
 	private String[] premiumServices;
 	
+	// These fields will be used for radio buttons field
+	private String overseasOperations;
+	private String employeeStrength;
+	
 	
 	public String[] getPremiumServices() {
 		return premiumServices;
@@ -88,6 +92,22 @@ public class OrganizationRegistration {
 
 	public void setOrgName(String orgName) {
 		this.orgName = orgName;
+	}
+
+	public String getOverseasOperations() {
+		return overseasOperations;
+	}
+
+	public void setOverseasOperations(String overseasOperations) {
+		this.overseasOperations = overseasOperations;
+	}
+
+	public String getEmployeeStrength() {
+		return employeeStrength;
+	}
+
+	public void setEmployeeStrength(String employeeStrength) {
+		this.employeeStrength = employeeStrength;
 	}
 	
 	

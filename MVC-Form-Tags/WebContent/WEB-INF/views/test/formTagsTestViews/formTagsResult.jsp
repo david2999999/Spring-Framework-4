@@ -81,7 +81,15 @@
 			<b>${premiumService.substring(0, premiumService.length() - 2)}</b>
 		</h3>
 		
-
+		<h3>Overseas Operations: <b>${orgreg.overseasOperations}</b></h3>
+		
+		<h3>Work Force Size: 
+			<c:forEach var="entry" items="${employeeStrengthList}">
+				<c:if test="${orgreg.employeeStrength eq entry.key}">
+					<b>${entry.value}</b>
+				</c:if>
+			</c:forEach>
+		</h3>
 	</div>
 </body>
 </html>

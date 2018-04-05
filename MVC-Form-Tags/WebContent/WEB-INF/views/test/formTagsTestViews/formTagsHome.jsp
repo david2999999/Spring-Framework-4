@@ -75,6 +75,20 @@
 					<td><form:label path="premiumServices">Premium Services</form:label></td>
 					<td><form:checkboxes path="premiumServices" items="${premiumServiceList}"/></td>
 				</tr>
+				
+				<tr>
+					<td><form:label path="overseasOperations">Overseas Operations</form:label></td>
+					<td>
+						<form:radiobutton path="overseasOperations" value="Yes"/>Yes
+						<form:radiobutton path="overseasOperations" value="No"/>No
+					</td>
+				</tr>
+				
+				<tr>
+					<td><form:label path="employeeStrength">Work Force Size</form:label></td>
+					<td><form:radiobuttons path="employeeStrength" items="${employeeStrengthList}"/></td>
+				</tr>
+				
 				<tr>
 					<td align="center"><input type="submit" value="Submit"/></td>
 				</tr>

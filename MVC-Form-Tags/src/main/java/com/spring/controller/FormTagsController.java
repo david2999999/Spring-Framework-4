@@ -44,6 +44,7 @@ public class FormTagsController {
 		map.put("registeredPreviouslyList", organizationRegistrationService.populateRegisteredPreviously());
 		map.put("subscriptionList", organizationRegistrationService.populateOptionalServices());
 		map.put("premiumServiceList", organizationRegistrationService.populatePremiumServices());
+		map.put("employeeStrengthList", organizationRegistrationService.populateEmployeeStrength());
 	}
 	
 }
