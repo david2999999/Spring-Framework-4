@@ -55,6 +55,14 @@ public class OrganizationRegistrationService {
 		return optionalServices;
 	}
 	
+	public Map<String, String> populatePremiumServices(){
+		Map<String, String> premiumServices = new LinkedHashMap<String, String>();
+		premiumServices.put("directoryService", "Directory");
+		premiumServices.put("revenueService", "Revenue Reports");
+		premiumServices.put("revenueAnalyticsService", "Revenue Analytics");
+		
+		return premiumServices;
+	}
 	
 }
 
