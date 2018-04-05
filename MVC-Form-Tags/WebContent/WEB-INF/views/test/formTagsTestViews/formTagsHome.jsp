@@ -57,21 +57,21 @@
 					<td><form:label path="registeredPreviously">Registered Previously</form:label></td>
 					<td><form:checkbox path="registeredPreviously" items="${registeredPreviouslyList}"/></td>
 				</tr>
-				
-				<tr>
-					<td><form:label path="optionalServices">Optional Services Subscriptions:</form:label></td>
-					<td>
-						<form:checkbox path="optionalServices" value="emailService"/>${subscriptionList.emailService}
-						<form:checkbox path="optionalServices" value="promotionService"/>${subscriptionList.promotionService}
-						<form:checkbox path="optionalServices" value="newsLetterService"/>${subscriptionList.newsLetterService}
-					</td>
-				</tr>
-				
 				<tr>
 					<td><form:label path="like">Like the website?</form:label></td>
 					<td><form:checkbox path="like" value="yes"/>Like</td>
 				</tr>
 				
+				<tr>
+					<td><form:label path="optionalServices">Optional Services Subscriptions:</form:label></td>
+					<td>
+						<form:checkbox path="optionalServices" value="emailService"/>${subscriptionList.emailService}
+						<form:checkbox path="optionalServices" value="promotionalService"/>${subscriptionList.promotionalService}
+						<form:checkbox path="optionalServices" value="newsLetterService"/>${subscriptionList.newsLetterService}
+					</td>
+				</tr>
+				
+
 				<tr>
 					<td align="center"><input type="submit" value="Submit"/></td>
 				</tr>
