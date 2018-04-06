@@ -13,6 +13,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.domain.test.OrganizationRepresentative;
@@ -29,7 +30,7 @@ public class FormValidationController {
 								"orgrep", new OrganizationRepresentative());
 	}
 	
-	@RequestMapping("/registerOrgRep")
+	@RequestMapping(value="/registerOrgRep", method=RequestMethod.POST)
 	public String organizationRepresentativeRegistration(
 			@Valid @ModelAttribute("orgrep") OrganizationRepresentative orgRepresentative,
 			BindingResult result, Model model) {

@@ -26,6 +26,12 @@
 					<td><form:input path="firstName" placeholder="Enter First Name" cssClass="cinput"/></td>
 					<td><form:errors path="firstName" cssClass="cb"/></td>
 				</tr>
+				
+				<tr>
+					<td><form:label path="lastName" cssClass="clabel">Last Name</form:label></td>
+					<td><form:input path="lastName" placeholder="Enter Surname" cssClass="cinput"/></td>
+					<td><form:errors path="lastName" cssClass="cb"/></td>
+				</tr>
 				<tr>
 					<td/>
 					<td align="center"><input type="submit" value="Submit" class="csubmit"/></td>
