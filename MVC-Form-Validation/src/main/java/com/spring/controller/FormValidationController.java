@@ -29,6 +29,7 @@ public class FormValidationController {
 								"orgrep", new OrganizationRepresentative());
 	}
 	
+	@RequestMapping("/registerOrgRep")
 	public String organizationRepresentativeRegistration(
 			@Valid @ModelAttribute("orgrep") OrganizationRepresentative orgRepresentative,
 			BindingResult result, Model model) {

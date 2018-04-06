@@ -34,6 +34,10 @@
 		<a href="${contextPath}/formTagsDemo/home" style="font-size: 20px"> 
 			Click here to go to test bed for MVC Form Tags
 		</a>
+		<br/>
+		<a href="${contextPath}/formValidation/home" style="font-size: 20px"> 
+			Click here to go to test bed for form Validation
+		</a>
 	</div>
 </body>
 </html>
