@@ -7,6 +7,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import com.spring.validation.test.AgeConstraint;
+import com.spring.validation.test.EmailVerification;
 
 public class OrganizationRepresentative {
 
@@ -24,7 +25,17 @@ public class OrganizationRepresentative {
 	@Pattern(regexp="^[a-zA-Z-0-9]{6}", message="* Zip code must be 6 characters and/digits only")
 	private String zipCode;
 	
+	@EmailVerification(message="* Email is invalid")
+	private String email;
 	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getZipCode() {
 		return zipCode;
 	}
