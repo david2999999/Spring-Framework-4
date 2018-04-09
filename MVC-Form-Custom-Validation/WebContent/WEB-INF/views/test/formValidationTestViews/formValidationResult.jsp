@@ -28,6 +28,10 @@
 		<h1>Age: <b class="cb">${orgrep.age}</b></h1>
 	</div>
 	
+	<div style="text-align: center">
+		<h1>Age: <b class="cb">${orgrep.zipCode}</b></h1>
+	</div>
+	
 	<hr/>
 	<div align="center">
 		<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
