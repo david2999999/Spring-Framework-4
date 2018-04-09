@@ -35,6 +35,12 @@
 	<div style="text-align: center">
 		<h1>Email: <b class="cb">${orgrep.email}</b></h1>
 	</div>
+	
+	<div style="text-align: center">
+		<h1>Password: <b class="cb">${orgrep.password}</b></h1>
+	</div>
+	
+	
 	<hr/>
 	<div align="center">
 		<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
